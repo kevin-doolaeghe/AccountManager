@@ -1,0 +1,66 @@
+﻿@page
+@model AccountManager.Pages.Records.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Record[0].Description)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Record[0].Amount)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Record[0].Status)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Record[0].Date)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Record[0].RecordType)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Record[0].Account)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Record) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Description)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Amount)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Status)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Date)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.RecordType.RecordTypeId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Account.AccountId)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.RecordId">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.RecordId">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.RecordId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
