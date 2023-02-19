@@ -11,12 +11,6 @@ namespace AccountManager.Services {
 
         public DatabaseContext (DbContextOptions<DatabaseContext> options) : base(options) {}
 
-        public DbSet<User> Users { get; set; } = default!;
-
-        public DbSet<Account> Accounts { get; set; } = default!;
-        
         public DbSet<Record> Records { get; set; } = default!;
-        
-        public DbSet<RecordType> RecordTypes { get; set; } = default!;
     }
 }

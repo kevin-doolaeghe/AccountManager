@@ -25,12 +25,6 @@
             <th>
                 @Html.DisplayNameFor(model => model.Record[0].Date)
             </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Record[0].RecordType)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Record[0].Account)
-            </th>
             <th></th>
         </tr>
     </thead>
@@ -48,12 +42,6 @@
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Date)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.RecordType.RecordTypeId)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Account.AccountId)
             </td>
             <td>
                 <a asp-page="./Edit" asp-route-id="@item.RecordId">Edit</a> |

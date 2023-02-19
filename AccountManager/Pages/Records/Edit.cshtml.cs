@@ -32,8 +32,6 @@ namespace AccountManager.Pages.Records {
                 return NotFound();
             }
             Record = record;
-            ViewData["AccountId"] = new SelectList(_context.Set<Account>(), "AccountId", "AccountId");
-            ViewData["RecordTypeId"] = new SelectList(_context.Set<RecordType>(), "RecordTypeId", "RecordTypeId");
             return Page();
         }
 

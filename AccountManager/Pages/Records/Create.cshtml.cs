@@ -19,8 +19,6 @@ namespace AccountManager.Pages.Records {
         }
 
         public IActionResult OnGet() {
-            ViewData["AccountId"] = new SelectList(_context.Set<Account>(), "AccountId", "AccountId");
-            ViewData["RecordTypeId"] = new SelectList(_context.Set<RecordType>(), "RecordTypeId", "RecordTypeId");
             return Page();
         }
 

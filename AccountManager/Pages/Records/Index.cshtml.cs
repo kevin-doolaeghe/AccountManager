@@ -22,9 +22,7 @@ namespace AccountManager.Pages.Records {
 
         public async Task OnGetAsync() {
             if (_context.Records != null) {
-                Record = await _context.Records
-                    .Include(e => e.Account)
-                    .Include(e => e.RecordType).ToListAsync();
+                Record = await _context.Records.ToListAsync();
             }
         }
     }
